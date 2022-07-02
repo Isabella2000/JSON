@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+p{margin: 5px;}
+form{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(198, 240, 181);
+    width: auto;
+    border-radius: 10px;
+}
+.tituloForm{
+    text-align: center;
+    font-size: 35px;
+}
+
+.form-group{
+    width: 80%;
+    margin: 8px;
+    font-size: 20px;
+}
+select{
+    color:rgb(1, 94, 1);
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: rgb(175, 192, 147);
+    padding: 6px;
+    width: 100%;
+}
+input{
+    color: darkgreen;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding: 10px 3px 2px 3px;
+    width: 97%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid  rgb(97, 55, 55);
+}
+input:focus{
+    outline: none;
+    transition: 1s;
+    border-bottom: 1px solid  rgb(1, 94, 1);
+}
+.nomPet{
+    margin-bottom: 10px;
+}
+div.botones{display: flex; gap: 10px;}
+div.botones input{
+    background-color: cornflowerblue;
+    border: none;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.error{
+    background-color: brown;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+div ul li{
+    font-weight: 550;
+    font-size: medium;
+}
+footer{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+#listarJson{
+    text-align: center;
+    width: 30%;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+}

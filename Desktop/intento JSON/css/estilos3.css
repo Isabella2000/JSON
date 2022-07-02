@@ -1,0 +1,253 @@
+.persona, #mascota {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxJ5gj0mfPZQh1FlBX8nxzOZAynBVrsVwHEgqqwfJptcFZtNn1w9hufMev9Fe2su4TRNI&usqp=CAU");
+}
+
+.tree{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: left;
+    width: 1300px;
+    height: 1100px;
+    background-image: url("https://i.pinimg.com/originals/6e/cf/11/6ecf11e2d310619fe38bc0c510093651.jpg")
+}
+
+.persona {
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 150px;
+    background-color: #FFFFFF;
+    display: inline-block;
+}
+
+.persona.femenino {
+    border-color: #F45B69;
+}
+
+#mascota{
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 150px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    border-color: brown;
+    text-align: center;
+    text-align: center;
+}
+
+.persona.macho {
+    border-color: #456990;
+}
+
+.persona div {
+    text-align: center;
+}
+
+.persona .name {
+    font-size: 16px;
+}
+
+
+.persona .parentDrop, .persona .spouseDrop, .persona .childDrop {
+    border: 1px dashed #000000;
+    width: auto;
+    min-width: 80px;
+    min-height: 80px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding-top: 15px;
+}
+
+
+/* drop joda investiga de fondo eso que no entiendoooo y si lo quito no hace nadaa */
+.persona .parentDrop>span,
+.persona .spouseDrop>span,
+.persona .childDrop>span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-weight: bold;
+}
+
+.parentDrop>.persona,
+.spouseDrop>.persona,
+.childDrop>.persona {
+    margin-top: 20px;
+}
+
+
+
+/* todo lo del perro arbol, desde las listas ahora especificacdas */
+/* esto ya no es tan valido ahora que no hay una gran lista que encierra todo */
+.tree ul {
+    padding-top: 0px;
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.tree li {
+    /* forma en la que esta contenida la lista mk re importante todo */
+    display: table-cell;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    /* enserio nosequejeso investiga */
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+
+
+/* nosequelistaaaa es coñoooo pero es una lista en la que aplica */
+.tree li::before, .tree li::after {
+    content: '';
+    /* mk esta kga no la entiedno vere un video de 9horas */
+    position: absolute;
+    /* hay que dejar a veces claro que arriba top no hay nada pero esa kga explota sin eso */
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.mayores li{
+    right: auto;
+    left: 0%;
+}
+
+.linea{
+    width: 200px;
+}
+
+.uno{margin: 0;}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+/*radio de los bordes y tales coordenadas, en sister izquierda, mother hija punta hija, izquierda mascota, izquierda abuela materna */
+.tree li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+    content: '';
+}
+
+
+/*radio de los bordes y tales coordenadas, ubicado en izquierda abuelo paterno, derecha hijx1, derecha uncle hijo, derecha me*/
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+    
+}
+
+/*linea del segundo ul lista desde padre a sus hijos*/
+.tree ul ul::before {
+    content: 'rt';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+ /* esto en realidad no hace nada, solo en ffirefox funciona, pero no hace daño y da miedo quitarlo asi que se queda asi sea de decoracion */
+.tree li .parent {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    margin-top: 10px;
+}
+
+/* lineas doble */
+.tree li .parent::before {
+content: '';
+position: absolute;
+top: 40px;
+left: 50%;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
+width: 3px;
+height: 10px;
+}
+.tree li .familia {
+    position: relative;
+}
+.tree li .familia .spouse {
+    position: absolute;
+    top: 0;
+    left: 50%;
+margin-left: 95px;
+}
+.tree li .familia .spouse::before {
+content: '';
+position: absolute;
+top: 50%;
+left: -10px;
+border-top: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+width: 10px;
+height: 3px;
+}
+
+
+
+/*cambio de color de contenedor y depende desde que ubicacion cuantas y cuales seleccionadas*/
+.tree li .child:hover,
+.tree li .child:hover+.parent .persona,
+.tree li .parent .persona:hover,
+.tree li .child:hover+.parent .persona+ul li .child,
+.tree li .parent .persona:hover+ul li .child,
+.tree li .child:hover+.parent .persona+ul li .parent .persona,
+.tree li .parent .persona:hover+ul li .parent .persona, #mascota:hover {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+}
+/*cambio de color de borde*/
+.tree li .child:hover+.parent::before,
+.tree li .child:hover+.parent .persona+ul li::after,
+.tree li .parent .persona:hover+ul li::after,
+.tree li .child:hover+.parent .persona+ul li::before,
+.tree li .parent .persona:hover+ul li::before,
+.tree li .child:hover+.parent .persona+ul::before,
+.tree li .parent .persona:hover+ul::before,
+.tree li .child:hover+.parent .persona+ul ul::before,
+.tree li .parent .persona:hover+ul ul::before, #mascota {
+    border-color: #94a0b4;
+}
+
+
+.formMascotasHidden{
+    opacity: 0;
+}
+.formMascotasVer{
+    opacity: 1;
+}

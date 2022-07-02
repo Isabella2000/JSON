@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intento3</title>
+    <link rel="stylesheet" href="css/estilos3.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        
+        <form id="form">
+            <p class="tituloForm">ARBOL GENEALOGICO</p>
+            <div class="form-group">
+                <p>Miembro de la familia</p>
+                <select id="miembros">
+                    <option disabled>Seleccione su Cargo Familiar</option>
+                    <option value="abuelo paterno">Abuelo Paterno</option>
+                    <option value="abuela paterna">Abuela Paterna</option>
+                    <option value="abuelo materno">Abuelo Materno</option>
+                    <option value="abuela materna">Abuela Materna</option>
+                    <option value="madre">Madre</option>
+                    <option value="padre">Padre</option>
+                    <option value="hijo">Hijo</option>
+                    <option value="hija">Hija</option>
+                    <option value="mascota">Mascota</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Nombre:</p>
+                <input type="text" name="Nombre" id="Nombre" placeholder="Nombre del Familiar">
+                
+                <p>Edad:</p>
+                <input type="number" name="Edad" id="Edad" max="100" min="0" placeholder="Edad del Familiar">
+            </div>
+            <div class="form-group mascota">
+                <div class="nomPet">
+                    <label>Nombre de la mascota:</label>
+                    <input type="text" name="Nombremascota" id="Nombremascota" placeholder="Nombre de la Mascota">
+                </div>
+                <div class="typePet">
+                    <select id="Mascotaname">
+                        <option disabled>Seleccione su tipo de mascota</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Loro">Loro</option>
+                        <option value="Conejo">Conejo</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Hamster">Hamster</option>
+                        <option value="Peces">Peces</option>
+                        <option value="Otro">otro</option>
+                    </select>
+                </div>
+           </div>
+           <div class="form-group botones">
+               <input type="submit" value="Enviar" id="Enviar">
+               <input type="button" value="Limpiar" id="Limpiar">
+               <input type="button" value="ver JSON" id="verJSON">
+           </div>
+    </form>
+</header>
+
+<!-- ponle id a tree y explota pero al parecer aparece como si funcionara -->
+<div class="tree">
+
+    <div class="mayores"> 
+        <ul class="uno">
+            <li class="paterno">
+                <div class="familia">
+                    <div class="persona child macho">
+                    <div id="name1">abuelo paterno</div>
+                    </div>
+
+
+                    <div class="parent">
+                    <div class="persona femenino">
+                    <div id="name2">abuela paterna</div>
+                    </div>
+
+                    <div class="parent">
+                    <div class="persona macho">
+                    <div id="name3">padre</div>
+                </div> 
+            </li>
+
+            <li class="materno">
+                <div class="familia">
+                    <div class="persona child macho">
+                    <div id="name4">abuelo materno</div>
+                </div>
+
+
+                <div class="parent">
+                    <div class="persona femenino">
+                    <div id="name5">abuela materna</div>
+                </div>
+
+                <div class="parent">
+                    <div class="persona femenino">
+                    <div id="name6">madre</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+ <!-- ---------------------------------------------------------- ---------------------------------------------------------- ---------------------------------------------------------- ---------------------------------------------------------- -------------------------------------------------------->
+
+    <ul class="uno">
+        <li class="linea"></li>
+        <li class="linea"></li>
+    </ul>
+
+    <ul class="uno">
+        <li>
+            <li>
+                <div class="persona child macho">
+                    <div id="name7">hijx1</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="persona child femenino">
+                    <div id="name8">hijx2</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="persona child femenino">
+                    <div id="name9">hijx3</div>
+                </div>
+            </li>
+
+            <li>
+                    <!-- persona child mascota si quiere conservar las caracetristicas  -->
+                    <div id="mascota">
+                    <div id="name10">mascota</div>
+                </div>
+            </li>
+        </li>
+    </ul>
+</div>
+
+
+                
+<!-- ------------------------------------------------------------------------------- -->
+
+<footer>
+    <div id="listarJson"></div>
+</footer>
+
+    <script src="js/script.js"  ></script>
+</body>
+</html>
